@@ -1,5 +1,5 @@
 require 'faker'
 
-5.times do |n|
-	Task.create(description: Faker::Lorem.sentence)
+10.times do
+	Task.create(name: "Go to" + Faker::Commerce.department.to_s, complete: rand(2))
 end
