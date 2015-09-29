@@ -33,6 +33,9 @@ when "complete"
 	puts "set task to complete"
 
 when "delete"
+	tasks = Task.all
+	index = string.to_i
+	tasks.destroy(index)
 	puts "delete tasks"
 else
 	puts "Invalid Command"
