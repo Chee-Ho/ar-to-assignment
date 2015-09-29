@@ -22,9 +22,16 @@ when "list"
 end
 
 when "new"
+	Task.create(name: string, complete: 0)
 	puts "create new task"
+
 when "complete"
+	tasks = Task.all
+	index = string.to_i
+	tasks[index - 1].complete = 1
+	tasks[index -1].save
 	puts "set task to complete"
+
 when "delete"
 	puts "delete tasks"
 else
@@ -35,4 +42,3 @@ else
 	puts "complete [id] - set task to complete"
 	puts "delete [id] - delete the task"
 end
-
