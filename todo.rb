@@ -10,7 +10,17 @@ string = ARGV.join(" ")
 #call method to list, add, delete from app/model/task
 case command
 when "list"
-	puts "list"
+	puts "Task List"
+	puts "========="
+	tasks = Task.all
+	tasks.each_with_index do |task, index|
+		if task.complete == 0
+		puts "#{index + 1}, #{task.name} [NOT DONE]"
+	else
+		puts "#{index + 1}, #{task.name} [DONE]"
+	end
+end
+
 when "new"
 	puts "create new task"
 when "complete"
